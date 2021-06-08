@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module chat_manager</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module chat_manager</h1>
+<ul class="index"><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+
+<p><b>Behaviours:</b> <a href="gen_server.html"><tt>gen_server</tt></a>.</p>
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#bind_test_listener-0">bind_test_listener/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#chroom_list-0">chroom_list/0</a></td><td>
+  Returns list of rooms.</td></tr>
+<tr><td valign="top"><a href="#code_change-3">code_change/3</a></td><td>
+  Convert process state when code is changed.</td></tr>
+<tr><td valign="top"><a href="#get_last_mess-1">get_last_mess/1</a></td><td>
+  Returns last room messages.</td></tr>
+<tr><td valign="top"><a href="#get_room_members-1">get_room_members/1</a></td><td>
+  Returns list if roommates.</td></tr>
+<tr><td valign="top"><a href="#handle_call-3">handle_call/3</a></td><td>
+  Handling call messages.</td></tr>
+<tr><td valign="top"><a href="#handle_cast-2">handle_cast/2</a></td><td>
+  Handling cast messages.</td></tr>
+<tr><td valign="top"><a href="#handle_info-2">handle_info/2</a></td><td>
+  Handling all non call/cast messages.</td></tr>
+<tr><td valign="top"><a href="#init-1">init/1</a></td><td>
+  Initializes the server.</td></tr>
+<tr><td valign="top"><a href="#recv_message-3">recv_message/3</a></td><td>
+  Stores user message.</td></tr>
+<tr><td valign="top"><a href="#remove_room_member-1">remove_room_member/1</a></td><td>
+  Removes user from room.</td></tr>
+<tr><td valign="top"><a href="#start_link-0">start_link/0</a></td><td>
+  Starts the server.</td></tr>
+<tr><td valign="top"><a href="#status-0">status/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#stop-0">stop/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#store_username-2">store_username/2</a></td><td>
+  Stores username.</td></tr>
+<tr><td valign="top"><a href="#terminate-2">terminate/2</a></td><td>
+  This function is called by a gen_server when it is about to
+  terminate.</td></tr>
+<tr><td valign="top"><a href="#update_members_room-2">update_members_room/2</a></td><td>
+  Updates users room.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="bind_test_listener-0">bind_test_listener/0</a></h3>
+<div class="spec">
+<p><tt>bind_test_listener() -&gt; {ok, List::list()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="chroom_list-0">chroom_list/0</a></h3>
+<div class="spec">
+<p><tt>chroom_list() -&gt; any()</tt></p>
+</div><p>
+  Returns list of rooms</p>
+
+<h3 class="function"><a name="code_change-3">code_change/3</a></h3>
+<div class="spec">
+<p><tt>code_change(OldVsn::term(), State::term(), Extra::term()) -&gt; {ok, NewState::term()}</tt><br></p>
+</div><p>
+  Convert process state when code is changed
+ </p>
+
+<h3 class="function"><a name="get_last_mess-1">get_last_mess/1</a></h3>
+<div class="spec">
+<p><tt>get_last_mess(RoomName) -&gt; any()</tt></p>
+</div><p>
+  Returns last room messages</p>
+
+<h3 class="function"><a name="get_room_members-1">get_room_members/1</a></h3>
+<div class="spec">
+<p><tt>get_room_members(RoomName) -&gt; any()</tt></p>
+</div><p>
+  Returns list if roommates</p>
+
+<h3 class="function"><a name="handle_call-3">handle_call/3</a></h3>
+<div class="spec">
+<p><tt>handle_call(Request::term(), From::{pid(), Tag::term()}, State::term()) -&gt; {reply, Reply::term(), State} | {reply, Reply::term(), State, timeout()} | {noreply, State} | {noreply, State, timeout()} | {stop, Reason::term(), Reply::term(), State} | {stop, Reason::term(), State}</tt><br></p>
+</div><p>
+  Handling call messages
+ </p>
+
+<h3 class="function"><a name="handle_cast-2">handle_cast/2</a></h3>
+<div class="spec">
+<p><tt>handle_cast(Request::term(), State::term()) -&gt; {noreply, State::term()} | {noreply, State::term(), timeout()} | {stop, Reason::term(), State::term()}</tt><br></p>
+</div><p>
+  Handling cast messages
+ </p>
+
+<h3 class="function"><a name="handle_info-2">handle_info/2</a></h3>
+<div class="spec">
+<p><tt>handle_info(Info::timeout | term(), State::term()) -&gt; {noreply, State::term()} | {noreply, State::term(), timeout()} | {stop, Reason::term(), State::term()}</tt><br></p>
+</div><p>
+  Handling all non call/cast messages
+ </p>
+
+<h3 class="function"><a name="init-1">init/1</a></h3>
+<div class="spec">
+<p><tt>init(Args::term()) -&gt; {ok, State::term()} | {ok, State::term(), timeout()} | ignore | {stop, Reason::term()}</tt><br></p>
+</div><p>
+  Initializes the server</p>
+
+<h3 class="function"><a name="recv_message-3">recv_message/3</a></h3>
+<div class="spec">
+<p><tt>recv_message(Name, RoomName, Msg1) -&gt; any()</tt></p>
+</div><p>
+  Stores user message</p>
+
+<h3 class="function"><a name="remove_room_member-1">remove_room_member/1</a></h3>
+<div class="spec">
+<p><tt>remove_room_member(RoomMember) -&gt; any()</tt></p>
+</div><p>
+  Removes user from room</p>
+
+<h3 class="function"><a name="start_link-0">start_link/0</a></h3>
+<div class="spec">
+<p><tt>start_link() -&gt; {ok, Pid::pid()} | ignore | {error, Error::term()}</tt><br></p>
+</div><p>
+  Starts the server</p>
+
+<h3 class="function"><a name="status-0">status/0</a></h3>
+<div class="spec">
+<p><tt>status() -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="stop-0">stop/0</a></h3>
+<div class="spec">
+<p><tt>stop() -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="store_username-2">store_username/2</a></h3>
+<div class="spec">
+<p><tt>store_username(RoomName, Username) -&gt; any()</tt></p>
+</div><p>
+  Stores username</p>
+
+<h3 class="function"><a name="terminate-2">terminate/2</a></h3>
+<div class="spec">
+<p><tt>terminate(Reason::normal | shutdown | {shutdown, term()} | term(), State::term()) -&gt; no_return()</tt><br></p>
+</div><p>
+  This function is called by a gen_server when it is about to
+  terminate. It should be the opposite of Module:init/1 and do any
+  necessary cleaning up. When it returns, the gen_server terminates
+  with Reason. The return value is ignored.
+ </p>
+
+<h3 class="function"><a name="update_members_room-2">update_members_room/2</a></h3>
+<div class="spec">
+<p><tt>update_members_room(RoomName, Username) -&gt; any()</tt></p>
+</div><p>
+  Updates users room</p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc</i></p>
+</body>
+</html>

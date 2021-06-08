@@ -1,0 +1,10 @@
+-pa ./ebin
+-pa ./deps/cowboy/ebin
+-pa ./deps/cowlib/ebin
+-pa ./deps/ebus/ebin
+-pa ./deps/jiffy/ebin
+-pa ./deps/ranch/ebin
+
+
+-eval "application:start(chat)"
+-sname chatNode

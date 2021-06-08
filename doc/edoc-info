@@ -1,0 +1,4 @@
+%% encoding: UTF-8
+{application,chat}.
+{modules,[chat_app,chat_cowboy_ws_handler,chat_ebus_handler,chat_manager,
+          chat_sup]}.
