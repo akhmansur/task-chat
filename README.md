@@ -45,17 +45,18 @@ for Ubuntu/Debian:
 | terminate         | Any           |
 | chat              | Message       |
 
-Сообщения от сервера отправляются в формате [{type: Type},{msg: Message}]
+Сообщения от сервера отправляются в формате [{type: Type},{msg: Message}, сообщения других пользователей в текущую комнату отправляются в формате [[{From1:Message1}],[{From2:Message2}]].
 
-|     Type          |    Message            |
-| ----------------- | --------------------- |
-| chroom_list       | List of rooms         |
-| room_members_list | List of roommates     |
-| username_error    | Busy username         |
-| error             | Errors                |
-| last_messages     | Last room messages    |
-| enter_username    | Send your username    |
-|                   | with the following    |
-|                   | message               |
-| other             | Messages from other   |
-|                   | users                 |
+|     Type          |    Message                |
+| ----------------- | ------------------------- |
+| chroom_list       | List of rooms             |
+| room_members_list | List of roommates         |
+| username_error    | Busy username, try another|
+| error             | Errors                    |
+| last_messages     | List of last room         |
+|                   | messages                  |
+| enter_username    | Send your username        |
+|                   | with the following        |
+|                   | message                   |
+| other             | Messages from other       |
+|                   | users                     |
