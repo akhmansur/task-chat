@@ -29,3 +29,33 @@ for Ubuntu/Debian:
 ## Start the server
 
 ```$ make server```
+
+
+## Инструкция по командам.
+Сначала запросите список комнат сообщением [{type: chroom_list},{msg: any}]
+При заходе в комнату отправьте ник.
+Сообщения серверу отправляются в формате [{type: Type},{msg: Message}]. 
+
+|     Type          |    Message    |
+| ----------------- | ------------- |
+| chroom_list       | Any           |
+| room_members_list | Room name     |
+| enter_room        | Room name     |
+| username          | User name     |
+| terminate         | Any           |
+| chat              | Message       |
+
+Сообщения от сервера отправляются в формате [{type: Type},{msg: Message}]
+
+|     Type          |    Message            |
+| ----------------- | --------------------- |
+| chroom_list       | List of rooms         |
+| room_members_list | List of roommates     |
+| username_error    | Busy username         |
+| error             | Errors                |
+| last_messages     | Last room messages    |
+| enter_username    | Send your username    |
+|                   | with the following    |
+|                   | message               |
+| other             | Messages from other   |
+|                   | users                 |
